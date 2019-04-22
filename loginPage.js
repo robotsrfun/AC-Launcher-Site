@@ -1,7 +1,7 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-
+    user.sendEmailVerification();
     document.getElementById("user_div").style.display = "block";
     document.getElementById("login_div").style.display = "none";
 
@@ -10,8 +10,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     if(user != null){
 
       var email_id = user.email;
-      document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
-
+        
     }
 
   } else {
