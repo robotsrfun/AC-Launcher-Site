@@ -1,25 +1,24 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-    window.location = 'index.html';
-    
     document.getElementById("user_div").style.display = "block";
     document.getElementById("login_div").style.display = "none";
 
     var user = firebase.auth().currentUser;
 
-    if(user != null){
-
-      var email_id = user.email;
-        
-    }
-
+    var login_logout_button = document.getElementById("login_logout");
+    login_logout_button.value = "logout";
+      
+    var userName = document.getElementById("displayName");
+    login_logout_button.innerHTML = user.getEmail();
+      
   } else {
     // No user is signed in.
-
     document.getElementById("user_div").style.display = "none";
     document.getElementById("login_div").style.display = "block";
-
+    
+    var login_logout_button = document.getElementById("login_logout");
+    login_logout_button.value = "login";
   }
 });
 
@@ -54,7 +53,7 @@ function signUp(){
 
     // ...
   });
-  
+
 }
 
 function logout(){
