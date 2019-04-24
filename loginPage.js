@@ -1,10 +1,8 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-    if(!firebase.auth().currentUser.emailVerified) {
-        user.sendEmailVerification();
-    }
-
+    window.location = 'index.html';
+    
     document.getElementById("user_div").style.display = "block";
     document.getElementById("login_div").style.display = "none";
 
@@ -56,7 +54,7 @@ function signUp(){
 
     // ...
   });
-
+  
 }
 
 function logout(){
