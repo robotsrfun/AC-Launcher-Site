@@ -1,7 +1,10 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-    user.sendEmailVerification();
+    if(!firebase.auth().currentUser.emailVerified) {
+        user.sendEmailVerification();
+    }
+
     document.getElementById("user_div").style.display = "block";
     document.getElementById("login_div").style.display = "none";
 
