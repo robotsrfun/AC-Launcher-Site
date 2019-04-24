@@ -10,7 +10,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     login_logout_button.value = "logout";
       
     var userName = document.getElementById("displayName");
-    login_logout_button.innerHTML = user.getEmail();
+    userName.innerHTML = user.getEmail();
       
   } else {
     // No user is signed in.
