@@ -1,0 +1,14 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	background-color: #000;
+}
+
+.container {
+	padding-top: 15em;
+	text-align: center;
+	color: #fff;
+}
